@@ -8,11 +8,10 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
 {
     public class MultiplicateurHelper
     {
-
         private static readonly string[] MULTIPLICATEURS = { "n", "µ", "m", "", "k", "M", "G" };
         private static readonly double[] MULTVAL = { 0.000_000_001, 0.000_001, 0.001, 1, 1_000, 1_000_000, 1_000_000_000 };
 
-        private static readonly double PRECISION = 10.0; // 1/PRECISION est la véritable précision
+        private const double PRECISION = 10.0; // 1/PRECISION est la véritable précision
 
         public static string SymboleMult(double valeur)
         {
