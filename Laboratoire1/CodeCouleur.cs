@@ -20,8 +20,7 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
         public static readonly CodeCouleur L = new CodeCouleur("L", EnumInterne.L, "Blanc", 9, 9, 9, 1_000_000_000, 0.1, "B(L)anc 9");
         public static readonly CodeCouleur o = new CodeCouleur("o", EnumInterne.o, "Or", 0, 0, 0, 0.1, 0.05, "(o)r ±5%");
         public static readonly CodeCouleur A = new CodeCouleur("A", EnumInterne.A, "Argent", 0, 0, 0, 0.01, 0.1, "(A)rgent ±10%");
-
-
+         
         private static readonly IList<CodeCouleur> valueList = new List<CodeCouleur>();
 
         static CodeCouleur()
@@ -39,14 +38,14 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
             valueList.Add(o);
             valueList.Add(A);
         }
-
+    
         public enum EnumInterne
         {
             N,B,R,O,J,V,b,M,G,L,o,A
         }
 
         public readonly string ValeurNom;
-        public readonly EnumInterne Ei;
+        public readonly EnumInterne enumInterne;
         public readonly string LongNom;
         public readonly int PremiereBande;
         public readonly int DeuxiemeBande;
@@ -57,11 +56,11 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
         public readonly int Ordinal;
         public static int OrdinalSuivant = 0;
 
-        CodeCouleur(string valeur, EnumInterne ie, string nom, int premiereBande, int deuxiemeBande, int troisiemeBande, double multiplicateur, double tolerance, string description)
+        CodeCouleur(string valeur, EnumInterne enumInterne, string longNom, int premiereBande, int deuxiemeBande, int troisiemeBande, double multiplicateur, double tolerance, string description)
         {
             this.ValeurNom = valeur;
-            this.Ei = ie;
-            this.LongNom = nom;
+            this.enumInterne = enumInterne;
+            this.LongNom = longNom;
             this.PremiereBande = premiereBande;
             this.DeuxiemeBande = deuxiemeBande;
             this.TroisiemeBande = troisiemeBande;
@@ -86,7 +85,7 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
             foreach (CodeCouleur enumInstance in CodeCouleur.valueList)
                 if (enumInstance.ValeurNom == name)
                     return enumInstance;
-            throw new System.ArgumentException(name);
+            throw new ArgumentException(name);
         }
     }
 }

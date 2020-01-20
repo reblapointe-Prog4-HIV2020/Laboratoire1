@@ -14,6 +14,11 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
         protected double courrant;
         protected double tension;
 
+        public Circuit()
+        {
+            sousCircuits = new List<IComposant>();
+        }
+
         public double GetCourrant()
         {
             return courrant;
@@ -24,11 +29,6 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
             return tension;
         }
         
-        public Circuit()
-        {
-            sousCircuits = new List<IComposant>();
-        }
-
         public void AddSousCircuit(IComposant c)
         {
             sousCircuits.Add(c);
