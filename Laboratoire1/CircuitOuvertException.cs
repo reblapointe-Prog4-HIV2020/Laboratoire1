@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laboratoire1
 {
-    class CircuitOuvertException : Exception
+    public class CircuitOuvertException : Exception
     {
     }
 }

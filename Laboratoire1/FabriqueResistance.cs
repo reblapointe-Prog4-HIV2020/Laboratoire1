@@ -21,7 +21,7 @@ namespace Laboratoire1
             int mult = code.Length == 5 ? 100 : 10;
 
             valeur += CodeCouleur.ValueOf(Char.ToString(code[ind++])).PremiereBande * mult;
-            valeur += CodeCouleur.ValueOf(Char.ToString(code[ind++])).DeuxiemeBande * (mult/10.0);
+            valeur += CodeCouleur.ValueOf(Char.ToString(code[ind++])).DeuxiemeBande * (mult/10);
             valeur += code.Length == 5 ? CodeCouleur.ValueOf(Char.ToString(code[ind++])).TroisiemeBande : 0;
             valeur *= CodeCouleur.ValueOf(Char.ToString(code[ind++])).Multiplicateur;
 
