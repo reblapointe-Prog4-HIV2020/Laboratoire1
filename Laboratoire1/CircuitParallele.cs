@@ -19,7 +19,6 @@ namespace Laboratoire1
         }
 
         // V = I*R
-       
         public override void MettreSousTension(double tension)
         {
             if (sousCircuits.Count == 0)
@@ -32,13 +31,13 @@ namespace Laboratoire1
                 c.MettreSousTension(tension);
         }
 
-     public override void SpecifierCourrant(double courrant)
+        public override void SpecifierCourrant(double courrant)
         {
             this.courrant = courrant;
             this.MettreSousTension(courrant * CalculerResistance());
         }
 
-        public override String Dessiner()
+        public override string Dessiner()
         {
             StringBuilder ret = new StringBuilder("[");
             for (int i = 0; i < sousCircuits.Count; i++)

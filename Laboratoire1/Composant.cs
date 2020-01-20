@@ -15,6 +15,6 @@ namespace Laboratoire1
         void MettreSousTension(double tension);
         void SpecifierCourrant(double courrant);
 
-        String Dessiner();
+        string Dessiner();
     }
 }

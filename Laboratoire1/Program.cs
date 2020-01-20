@@ -6,12 +6,12 @@ namespace Laboratoire1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(FabriqueCircuit.help());
+            Console.WriteLine(FabriqueCircuit.Help());
             Console.WriteLine("--------------------------------------------------------------------------------------------------------");
             try
             {
                 Console.WriteLine("Entrez un circuit (code couleur ou valeur décimale)");
-                Composant c = FabriqueCircuit.fromString(Console.ReadLine());
+                Composant c = FabriqueCircuit.FromString(Console.ReadLine());
                 Console.WriteLine("Entrez une tension (en volt)");
                 c.MettreSousTension(Double.Parse(Console.ReadLine()));
                 Console.WriteLine(c);

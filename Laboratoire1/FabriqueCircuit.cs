@@ -15,47 +15,40 @@ namespace Laboratoire1
         public const char FERMETURE_PARALLELE = ']';
         public const char JETON = '0';
 
-        public const String PATRON_DECIMALE = "\\d+(\\.\\d+)?" + "|" + FabriqueResistance.PATRON_RESISTANCE;
+        public const string PATRON_DECIMALE = "\\d+(\\.\\d+)?" + "|" + FabriqueResistance.PATRON_RESISTANCE;
         
 
-        public static String help()
+        public static string Help()
         {
-            return FabriqueResistance.help() + "\n" + OUVERTURE_SERIE + "Circuit en série" +
+            return FabriqueResistance.Help() + "\n" + OUVERTURE_SERIE + "Circuit en série" +
                     FERMETURE_SERIE + " " + OUVERTURE_PARALLELE + "Circuit en parallèle" + FERMETURE_PARALLELE;
         }
 
-        public static Circuit fromString(String description)
+        public static Circuit FromString(string description)
         {
             // Lexer
             List<Composant> jetons = new List<Composant>();
-            description = lex(description, jetons);
+            description = Lex(description, jetons);
 
             // Parser
-            return parse(description, jetons);
+            return Parse(description, jetons);
         }
 
 
-        public static String lex(String description, List<Composant> jetons)
+        public static string Lex(string description, List<Composant> jetons)
         {
             Match m = Regex.Match(description, PATRON_DECIMALE);
             while (m.Success)
             {
-                String next = m.Value;
-                try
-                {
-                    double n = Double.Parse(next);
-                    jetons.Add(new Resistance(n));
-                }
-                catch (FormatException)
-                {
-                    jetons.Add(FabriqueResistance.fromCode(next));
-                }
+                string next = m.Value;
+                double n;
+                jetons.Add(Double.TryParse(next, out n) ? new Resistance(n) : FabriqueResistance.FromCode(next));
                 m = m.NextMatch();
             }
             return Regex.Replace(description, PATRON_DECIMALE, "0");
         }
 
-        private static Circuit parse(String description, List<Composant> jetons)
+        private static Circuit Parse(string description, List<Composant> jetons)
         {
             try
             {

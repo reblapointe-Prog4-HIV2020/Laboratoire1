@@ -8,18 +8,18 @@ namespace Laboratoire1
 {
     public class Resistance : Composant
     {
-
         private double valeur;
-        private double tolerance;
         private double courrant;
         private double tension;
+
+        public double Tolerance { get; set; }
 
         public Resistance()
         {
             valeur = 1;
         }
 
-        private void validerValeur(double valeur)
+        private void ValiderValeur(double valeur)
         {
             if (valeur <= 0)
                 throw new ArgumentException("Une résitance doit avoir une valeur strictement positive.");
@@ -27,16 +27,16 @@ namespace Laboratoire1
     
         public Resistance(double valeur, double tolerance)
         {
-            validerValeur(valeur);
+            ValiderValeur(valeur);
             this.valeur = valeur;
-            this.tolerance = tolerance;
+            this.Tolerance = tolerance;
         }
 
         public Resistance(double valeur)
         {
-            validerValeur(valeur);
+            ValiderValeur(valeur);
             this.valeur = valeur;
-            this.tolerance = 0;
+            this.Tolerance = 0;
         }
 
         public void SpecifierCourrant(double courrant)
@@ -58,18 +58,18 @@ namespace Laboratoire1
 
         public void SetValeur(double valeur)
         {
-            validerValeur(valeur);
+            ValiderValeur(valeur);
             this.valeur = valeur;
         }
 
         public double GetTolerance()
         {
-            return tolerance;
+            return Tolerance;
         }
 
         public void SetTolerance(double tolerance)
         {
-            this.tolerance = tolerance;
+            this.Tolerance = tolerance;
         }
 
         public double CalculerResistance()
@@ -87,14 +87,14 @@ namespace Laboratoire1
             return courrant;
         }
         
-        public override String ToString()
+        public override string ToString()
         {
-            return "{" + MultiplicateurHelper.multiplicateurString(CalculerResistance()) + "Ω, " +
-                    MultiplicateurHelper.multiplicateurString(GetCourrant()) + "A, " +
-                    MultiplicateurHelper.multiplicateurString(GetTension()) + "V}";
+            return "{" + MultiplicateurHelper.MultiplicateurString(CalculerResistance()) + "Ω, " +
+                    MultiplicateurHelper.MultiplicateurString(GetCourrant()) + "A, " +
+                    MultiplicateurHelper.MultiplicateurString(GetTension()) + "V}";
         }
 
-        public String Dessiner()
+        public string Dessiner()
         {
             return ToString();
         }

@@ -9,12 +9,12 @@ namespace Laboratoire1
     public class MultiplicateurHelper
     {
 
-        private static String[] MULTIPLICATEURS = { "n", "µ", "m", "", "k", "M", "G" };
+        private static string[] MULTIPLICATEURS = { "n", "µ", "m", "", "k", "M", "G" };
         private static double[] MULTVAL = { 0.000_000_001, 0.000_001, 0.001, 1, 1_000, 1_000_000, 1_000_000_000 };
 
         private static double PRECISION = 10.0; // 1/PRECISION est la véritable précision
 
-        public static String symboleMult(double valeur)
+        public static string SymboleMult(double valeur)
         {
             for (int i = MULTIPLICATEURS.Length - 1; i >= 0; i--)
                 if (valeur >= MULTVAL[i])
@@ -23,7 +23,7 @@ namespace Laboratoire1
         }
 
 
-        public static double multiplicateur(double valeur)
+        public static double Multiplicateur(double valeur)
         {
             for (int i = MULTIPLICATEURS.Length - 1; i >= 0; i--)
                 if (valeur >= MULTVAL[i])
@@ -32,9 +32,9 @@ namespace Laboratoire1
         }
 
 
-        public static String multiplicateurString(double valeur)
+        public static string MultiplicateurString(double valeur)
         {
-            return Math.Round((valeur * PRECISION) / multiplicateur(valeur)) / PRECISION + " " + symboleMult(valeur);
+            return Math.Round((valeur * PRECISION) / Multiplicateur(valeur)) / PRECISION + " " + SymboleMult(valeur);
         }
     }
 }

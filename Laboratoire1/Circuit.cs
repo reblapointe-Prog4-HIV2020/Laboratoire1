@@ -39,11 +39,11 @@ namespace Laboratoire1
         public abstract void SpecifierCourrant(double courrant);
         public abstract string Dessiner();
 
-        public override String ToString()
+        public override string ToString()
         {
-            return MultiplicateurHelper.multiplicateurString(CalculerResistance()) + "Ω, " +
-                    MultiplicateurHelper.multiplicateurString(GetCourrant()) + "A, " +
-                    MultiplicateurHelper.multiplicateurString(GetTension()) + "V.";
+            return MultiplicateurHelper.MultiplicateurString(CalculerResistance()) + "Ω, " +
+                    MultiplicateurHelper.MultiplicateurString(GetCourrant()) + "A, " +
+                    MultiplicateurHelper.MultiplicateurString(GetTension()) + "V.";
         }
         
     }

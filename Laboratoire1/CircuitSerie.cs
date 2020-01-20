@@ -41,7 +41,7 @@ namespace Laboratoire1
 
         }
 
-        public override String Dessiner()
+        public override string Dessiner()
         {
             StringBuilder ret = new StringBuilder("(");
             for (int i = 0; i < sousCircuits.Count; i++)

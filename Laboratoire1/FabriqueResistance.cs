@@ -9,9 +9,9 @@ namespace Laboratoire1
 {
     public class FabriqueResistance
     {
-        public const String PATRON_RESISTANCE = "[NBROJVbMGL]{2,3}[NBROJVbMoA][NBROJVbMoA]";
+        public const string PATRON_RESISTANCE = "[NBROJVbMGL]{2,3}[NBROJVbMoA][NBROJVbMoA]";
         
-        public static Resistance fromCode(String code)
+        public static Resistance FromCode(string code)
         {
             if (!Regex.Match(code, PATRON_RESISTANCE).Success)
                 throw new ArgumentException("Pas un code couleur valide de résistance");
@@ -28,7 +28,7 @@ namespace Laboratoire1
             return new Resistance(valeur, CodeCouleur.ValueOf(Char.ToString(code[ind++])).Tolerance);
         }
 
-        public static String help() {
+        public static string Help() {
             StringBuilder s = new StringBuilder();
             for (int i = 0; i < CodeCouleur.Values().Count; i++)
                 s.Append(CodeCouleur.Values()[i].Description).Append(i != CodeCouleur.Values().Count - 1 ? ", " : ".");
