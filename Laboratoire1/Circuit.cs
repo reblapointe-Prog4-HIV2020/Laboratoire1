@@ -45,7 +45,6 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
             return MultiplicateurHelper.MultiplicateurString(CalculerResistance()) + "Ω " +
                     MultiplicateurHelper.MultiplicateurString(GetCourrant()) + "A " +
                     MultiplicateurHelper.MultiplicateurString(GetTension()) + "V.";
-        }
-        
+        }   
     }
 }
