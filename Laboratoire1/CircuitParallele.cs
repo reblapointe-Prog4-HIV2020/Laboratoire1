@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CegepJonquiere.RebLapointe.Laboratoire1.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Laboratoire1
+namespace CegepJonquiere.RebLapointe.Laboratoire1
 {
     public class CircuitParallele : Circuit
     {
@@ -12,7 +13,7 @@ namespace Laboratoire1
         {
             double somme = 0;
 
-            foreach (Composant c in sousCircuits)
+            foreach (IComposant c in sousCircuits)
                 somme += 1 / c.CalculerResistance();
 
             return 1 / somme;
@@ -27,7 +28,7 @@ namespace Laboratoire1
             this.tension = tension;
             this.courrant = tension / CalculerResistance();
 
-            foreach (Composant c in sousCircuits)
+            foreach (IComposant c in sousCircuits)
                 c.MettreSousTension(tension);
         }
 

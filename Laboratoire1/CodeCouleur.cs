@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Laboratoire1
+namespace CegepJonquiere.RebLapointe.Laboratoire1
 {
     public sealed class CodeCouleur
     {

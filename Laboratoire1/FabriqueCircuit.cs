@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Laboratoire1
+namespace CegepJonquiere.RebLapointe.Laboratoire1
 {
     public class FabriqueCircuit
     {
@@ -27,7 +27,7 @@ namespace Laboratoire1
         public static Circuit FromString(string description)
         {
             // Lexer
-            List<Composant> jetons = new List<Composant>();
+            List<IComposant> jetons = new List<IComposant>();
             description = Lex(description, jetons);
 
             // Parser
@@ -35,7 +35,7 @@ namespace Laboratoire1
         }
 
 
-        public static string Lex(string description, List<Composant> jetons)
+        public static string Lex(string description, List<IComposant> jetons)
         {
             Match m = Regex.Match(description, PATRON_DECIMALE);
             while (m.Success)
@@ -48,7 +48,7 @@ namespace Laboratoire1
             return Regex.Replace(description, PATRON_DECIMALE, "0");
         }
 
-        private static Circuit Parse(string description, List<Composant> jetons)
+        private static Circuit Parse(string description, List<IComposant> jetons)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace Laboratoire1
                             delim.Push(OUVERTURE_PARALLELE);
                             break;
                         case JETON:
-                            composants.Peek().AddSousCircuit(jetons.First<Composant>());
+                            composants.Peek().AddSousCircuit(jetons.First<IComposant>());
                             jetons.RemoveAt(0);
                             break;
                         case FERMETURE_PARALLELE:

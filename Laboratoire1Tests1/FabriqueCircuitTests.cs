@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Laboratoire1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CegepJonquiere.RebLapointe.Laboratoire1;
 
-namespace Laboratoire1.Tests
+namespace CegepJonquiere.RebLapointe.Laboratoire1.Tests
 {
     [TestClass()]
     public class FabriqueCircuitTests
@@ -15,7 +15,7 @@ namespace Laboratoire1.Tests
         public void FromStringTest()
         {
             string description = "(5,[4,(10,2)],8)";
-            Composant c = FabriqueCircuit.FromString(description);
+            IComposant c = FabriqueCircuit.FromString(description);
             c.MettreSousTension(9);
             Assert.AreEqual(16, c.CalculerResistance(), 0.1);
             Assert.AreEqual(0.5625, c.GetCourrant(), 0.001);
@@ -40,7 +40,7 @@ namespace Laboratoire1.Tests
         public void FromStringTest1()
         {
             String description = "(NNVNA,[NNJNA,(NBNNA,NNRNA)],NNGNA)";
-            Composant c = FabriqueCircuit.FromString(description);
+            IComposant c = FabriqueCircuit.FromString(description);
             c.MettreSousTension(9);
             Assert.AreEqual(16, c.CalculerResistance(), 0.1);
             Assert.AreEqual(0.5625, c.GetCourrant(), 0.001);

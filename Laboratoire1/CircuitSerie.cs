@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CegepJonquiere.RebLapointe.Laboratoire1.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Laboratoire1
+namespace CegepJonquiere.RebLapointe.Laboratoire1
 {
     public class CircuitSerie : Circuit
     {
@@ -26,7 +27,7 @@ namespace Laboratoire1
             if (sousCircuits.Count == 0)
                 throw new CircuitOuvertException();
 
-            foreach (Composant c in sousCircuits)
+            foreach (IComposant c in sousCircuits)
                 c.SpecifierCourrant(courrant);
         }
         
@@ -34,7 +35,7 @@ namespace Laboratoire1
         {
             double somme = 0;
 
-            foreach (Composant c in sousCircuits)
+            foreach (IComposant c in sousCircuits)
                 somme += c.CalculerResistance();
 
             return somme;

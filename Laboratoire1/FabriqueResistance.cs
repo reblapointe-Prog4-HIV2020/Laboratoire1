@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Laboratoire1
+namespace CegepJonquiere.RebLapointe.Laboratoire1
 {
     public class FabriqueResistance
     {

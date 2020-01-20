@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CegepJonquiere.RebLapointe.Laboratoire1.Utils;
 
-namespace Laboratoire1
+namespace CegepJonquiere.RebLapointe.Laboratoire1
 {
-    public class Resistance : Composant
+    public class Resistance : IComposant
     {
         private double valeur;
         private double courrant;
@@ -89,8 +90,8 @@ namespace Laboratoire1
         
         public override string ToString()
         {
-            return "{" + MultiplicateurHelper.MultiplicateurString(CalculerResistance()) + "Ω, " +
-                    MultiplicateurHelper.MultiplicateurString(GetCourrant()) + "A, " +
+            return "{" + MultiplicateurHelper.MultiplicateurString(CalculerResistance()) + "Ω " +
+                    MultiplicateurHelper.MultiplicateurString(GetCourrant()) + "A " +
                     MultiplicateurHelper.MultiplicateurString(GetTension()) + "V}";
         }
 

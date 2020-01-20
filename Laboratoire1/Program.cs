@@ -1,6 +1,7 @@
-﻿using System;
+﻿using CegepJonquiere.RebLapointe.Laboratoire1.Exceptions;
+using System;
 
-namespace Laboratoire1
+namespace CegepJonquiere.RebLapointe.Laboratoire1
 {
     class Program
     {
@@ -11,7 +12,7 @@ namespace Laboratoire1
             try
             {
                 Console.WriteLine("Entrez un circuit (code couleur ou valeur décimale)");
-                Composant c = FabriqueCircuit.FromString(Console.ReadLine());
+                IComposant c = FabriqueCircuit.FromString(Console.ReadLine());
                 Console.WriteLine("Entrez une tension (en volt)");
                 c.MettreSousTension(Double.Parse(Console.ReadLine()));
                 Console.WriteLine(c);

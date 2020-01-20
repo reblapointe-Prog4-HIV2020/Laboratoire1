@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CegepJonquiere.RebLapointe.Laboratoire1.Utils;
 
-namespace Laboratoire1
+namespace CegepJonquiere.RebLapointe.Laboratoire1
 {
-    public abstract class Circuit : Composant
+    public abstract class Circuit : IComposant
     {
-        protected List<Composant> sousCircuits;
+        protected List<IComposant> sousCircuits;
 
         protected double courrant;
         protected double tension;
@@ -26,10 +27,10 @@ namespace Laboratoire1
         
         public Circuit()
         {
-            sousCircuits = new List<Composant>();
+            sousCircuits = new List<IComposant>();
         }
 
-        public void AddSousCircuit(Composant c)
+        public void AddSousCircuit(IComposant c)
         {
             sousCircuits.Add(c);
         }
@@ -41,8 +42,8 @@ namespace Laboratoire1
 
         public override string ToString()
         {
-            return MultiplicateurHelper.MultiplicateurString(CalculerResistance()) + "Ω, " +
-                    MultiplicateurHelper.MultiplicateurString(GetCourrant()) + "A, " +
+            return MultiplicateurHelper.MultiplicateurString(CalculerResistance()) + "Ω " +
+                    MultiplicateurHelper.MultiplicateurString(GetCourrant()) + "A " +
                     MultiplicateurHelper.MultiplicateurString(GetTension()) + "V.";
         }
         

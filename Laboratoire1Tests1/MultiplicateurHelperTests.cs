@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Laboratoire1;
+using CegepJonquiere.RebLapointe.Laboratoire1.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Laboratoire1.Tests
+namespace CegepJonquiere.RebLapointe.Laboratoire.Tests
 {
     [TestClass()]
     public class MultiplicateurHelperTests
