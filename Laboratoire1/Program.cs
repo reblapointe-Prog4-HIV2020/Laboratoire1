@@ -1,5 +1,4 @@
-﻿using CegepJonquiere.RebLapointe.Laboratoire1.Exceptions;
-using System;
+﻿using System;
 
 namespace CegepJonquiere.RebLapointe.Laboratoire1
 {

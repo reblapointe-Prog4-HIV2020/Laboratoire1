@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CegepJonquiere.RebLapointe.Laboratoire1.Utils;
 
 namespace CegepJonquiere.RebLapointe.Laboratoire1
 {

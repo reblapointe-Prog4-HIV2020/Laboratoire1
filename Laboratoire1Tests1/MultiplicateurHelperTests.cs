@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CegepJonquiere.RebLapointe.Laboratoire1.Utils;
+using CegepJonquiere.RebLapointe.Laboratoire1;
 using System;
 using System.Collections.Generic;
 using System.Linq;

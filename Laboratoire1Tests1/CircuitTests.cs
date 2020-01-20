@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CegepJonquiere.RebLapointe.Laboratoire1;
-using CegepJonquiere.RebLapointe.Laboratoire1.Exceptions;
 
 namespace CegepJonquiere.RebLapointe.Laboratoire1.Tests
 {

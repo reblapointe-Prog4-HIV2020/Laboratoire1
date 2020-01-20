@@ -41,8 +41,7 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
             while (m.Success)
             {
                 string next = m.Value;
-                int n;
-                jetons.Add(Int32.TryParse(next, out n) ? new Resistance(n) : FabriqueResistance.FromCode(next));
+                jetons.Add(Int32.TryParse(next, out int n) ? new Resistance(n) : FabriqueResistance.FromCode(next));
                 m = m.NextMatch();
             }
             return Regex.Replace(description, PATRON_DECIMALE, "0");
