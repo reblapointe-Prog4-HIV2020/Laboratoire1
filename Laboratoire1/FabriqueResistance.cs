@@ -20,12 +20,12 @@ namespace Laboratoire1
             int ind = 0;
             int mult = code.Length == 5 ? 100 : 10;
 
-            valeur += CodeCouleur.ValueOf(code.Substring(ind,++ind)).PremiereBande * mult;
-            valeur += CodeCouleur.ValueOf(code.Substring(ind,++ind)).DeuxiemeBande * (mult/10.0);
-            valeur += code.Length == 5 ? CodeCouleur.ValueOf(code.Substring(ind,++ind)).TroisiemeBande : 0;
-            valeur *= CodeCouleur.ValueOf(code.Substring(ind, ++ind)).Multiplicateur;
+            valeur += CodeCouleur.ValueOf(Char.ToString(code[ind++])).PremiereBande * mult;
+            valeur += CodeCouleur.ValueOf(Char.ToString(code[ind++])).DeuxiemeBande * (mult/10.0);
+            valeur += code.Length == 5 ? CodeCouleur.ValueOf(Char.ToString(code[ind++])).TroisiemeBande : 0;
+            valeur *= CodeCouleur.ValueOf(Char.ToString(code[ind++])).Multiplicateur;
 
-            return new Resistance(valeur, CodeCouleur.ValueOf(code.Substring(ind, ++ind)).Tolerance);
+            return new Resistance(valeur, CodeCouleur.ValueOf(Char.ToString(code[ind++])).Tolerance);
         }
 
         public static String help() {

@@ -37,6 +37,7 @@ namespace Laboratoire1.Tests
         }
 
 
+        [TestMethod()]
         void ParseMisformed()
         {
             Assert.ThrowsException<ArgumentException>(() => FabriqueCircuit.fromString(")"));
@@ -44,6 +45,7 @@ namespace Laboratoire1.Tests
             Assert.ThrowsException<ArgumentException>(() => FabriqueCircuit.fromString("[)])])])"));
         }
 
+        [TestMethod()]
         void ParseFromCode()
         {
             String description = "(NNVNA,[NNJNA,(NBNNA,NNRNA)],NNGNA)";

@@ -25,7 +25,7 @@ namespace Laboratoire1
             {
                 Console.WriteLine(iae.Message);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("La chaîne entrée n'est pas un circuit valide");
             }

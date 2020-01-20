@@ -60,6 +60,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="FabriqueCircuitTests.cs" />
+    <Compile Include="FabriqueResistanceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

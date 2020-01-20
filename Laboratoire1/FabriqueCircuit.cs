@@ -46,7 +46,7 @@ namespace Laboratoire1
                     double n = Double.Parse(next);
                     jetons.Add(new Resistance(n));
                 }
-                catch (FormatException nfe)
+                catch (FormatException)
                 {
                     jetons.Add(FabriqueResistance.fromCode(next));
                 }
@@ -92,7 +92,7 @@ namespace Laboratoire1
                     }
                 return composants.Pop();
             }
-            catch (ArgumentNullException e)
+            catch (ArgumentNullException)
             {
                 throw new ArgumentException("Mauvais parenthésage");
             }
