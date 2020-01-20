@@ -15,7 +15,7 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
         public const char FERMETURE_PARALLELE = ']';
         public const char JETON = '0';
 
-        public const string PATRON_DECIMALE = "\\d+" + "|" + FabriqueResistance.PATRON_RESISTANCE;
+        public const string PATRON_DECIMALE = "\\d+(,\\d+)?" + "|" + FabriqueResistance.PATRON_RESISTANCE;
         
 
         public static string Help()
@@ -41,7 +41,7 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
             while (m.Success)
             {
                 string next = m.Value;
-                jetons.Add(Int32.TryParse(next, out int n) ? new Resistance(n) : FabriqueResistance.FromCode(next));
+                jetons.Add(Double.TryParse(next, out double n) ? new Resistance(n) : FabriqueResistance.FromCode(next));
                 m = m.NextMatch();
             }
             return Regex.Replace(description, PATRON_DECIMALE, "0");
@@ -84,7 +84,7 @@ namespace CegepJonquiere.RebLapointe.Laboratoire1
                     }
                 return composants.Pop();
             }
-            catch (ArgumentNullException)
+            catch (InvalidOperationException)
             {
                 throw new ArgumentException("Mauvais parenthésage");
             }
